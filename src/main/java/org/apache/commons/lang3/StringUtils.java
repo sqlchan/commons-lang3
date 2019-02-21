@@ -27,63 +27,63 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-/**
+/**  测试
  * <p>Operations on {@link java.lang.String} that are
  * {@code null} safe.</p>
  *
  * <ul>
  *  <li><b>IsEmpty/IsBlank</b>
- *      - checks if a String contains text</li>
+ *      - checks if a String contains text</li>     检查字符串是否包含文本
  *  <li><b>Trim/Strip</b>
- *      - removes leading and trailing whitespace</li>
+ *      - removes leading and trailing whitespace</li>      删除开头和结尾的空白
  *  <li><b>Equals/Compare</b>
- *      - compares two strings null-safe</li>
+ *      - compares two strings null-safe</li>       比较两个字符串
  *  <li><b>startsWith</b>
- *      - check if a String starts with a prefix null-safe</li>
+ *      - check if a String starts with a prefix null-safe</li>     检查字符串是否以前缀开头
  *  <li><b>endsWith</b>
- *      - check if a String ends with a suffix null-safe</li>
+ *      - check if a String ends with a suffix null-safe</li>       检查字符串是否以后缀结束
  *  <li><b>IndexOf/LastIndexOf/Contains</b>
- *      - null-safe index-of checks
+ *      - null-safe index-of checks         指数检查
  *  <li><b>IndexOfAny/LastIndexOfAny/IndexOfAnyBut/LastIndexOfAnyBut</b>
- *      - index-of any of a set of Strings</li>
+ *      - index-of any of a set of Strings</li>     一组字符串的索引
  *  <li><b>ContainsOnly/ContainsNone/ContainsAny</b>
- *      - does String contains only/none/any of these characters</li>
+ *      - does String contains only/none/any of these characters</li>   字符串是否只包含/不包含/任何这些字符
  *  <li><b>Substring/Left/Right/Mid</b>
- *      - null-safe substring extractions</li>
+ *      - null-safe substring extractions</li>      提取子串
  *  <li><b>SubstringBefore/SubstringAfter/SubstringBetween</b>
- *      - substring extraction relative to other strings</li>
+ *      - substring extraction relative to other strings</li>       相对于其他字符串的子字符串提取
  *  <li><b>Split/Join</b>
- *      - splits a String into an array of substrings and vice versa</li>
+ *      - splits a String into an array of substrings and vice versa</li>   将字符串拆分为子字符串数组，反之亦然
  *  <li><b>Remove/Delete</b>
- *      - removes part of a String</li>
+ *      - removes part of a String</li>     删除字符串的一部分
  *  <li><b>Replace/Overlay</b>
- *      - Searches a String and replaces one String with another</li>
+ *      - Searches a String and replaces one String with another</li>       搜索字符串并用另一个字符串替换一个字符串
  *  <li><b>Chomp/Chop</b>
- *      - removes the last part of a String</li>
+ *      - removes the last part of a String</li>    删除字符串的最后一部分
  *  <li><b>AppendIfMissing</b>
- *      - appends a suffix to the end of the String if not present</li>
+ *      - appends a suffix to the end of the String if not present</li>     在字符串的末尾追加一个后缀(如果不存在)
  *  <li><b>PrependIfMissing</b>
- *      - prepends a prefix to the start of the String if not present</li>
+ *      - prepends a prefix to the start of the String if not present</li>  如果不存在，则在字符串的开头加上前缀
  *  <li><b>LeftPad/RightPad/Center/Repeat</b>
- *      - pads a String</li>
+ *      - pads a String</li>        垫一个字符串
  *  <li><b>UpperCase/LowerCase/SwapCase/Capitalize/Uncapitalize</b>
- *      - changes the case of a String</li>
+ *      - changes the case of a String</li>     更改字符串的大小写
  *  <li><b>CountMatches</b>
- *      - counts the number of occurrences of one String in another</li>
+ *      - counts the number of occurrences of one String in another</li>    计算一个字符串在另一个字符串中的出现次数
  *  <li><b>IsAlpha/IsNumeric/IsWhitespace/IsAsciiPrintable</b>
- *      - checks the characters in a String</li>
+ *      - checks the characters in a String</li>        检查字符串中的字符
  *  <li><b>DefaultString</b>
- *      - protects against a null input String</li>
+ *      - protects against a null input String</li>     防止输入空字符串
  *  <li><b>Rotate</b>
- *      - rotate (circular shift) a String</li>
+ *      - rotate (circular shift) a String</li>         旋转(循环移动)字符串
  *  <li><b>Reverse/ReverseDelimited</b>
- *      - reverses a String</li>
+ *      - reverses a String</li>        反转一个字符串
  *  <li><b>Abbreviate</b>
- *      - abbreviates a string using ellipsis or another given String</li>
+ *      - abbreviates a string using ellipsis or another given String</li>      使用省略号或另一个给定字符串缩写字符串
  *  <li><b>Difference</b>
- *      - compares Strings and reports on their differences</li>
+ *      - compares Strings and reports on their differences</li>        比较字符串并报告它们的差异
  *  <li><b>LevenshteinDistance</b>
- *      - the number of changes needed to change one String into another</li>
+ *      - the number of changes needed to change one String into another</li>   将一个字符串更改为另一个字符串所需的更改数
  * </ul>
  *
  * <p>The {@code StringUtils} class defines certain words related to
@@ -178,7 +178,7 @@ public class StringUtils {
 
     /**
      * <p>{@code StringUtils} instances should NOT be constructed in
-     * standard programming. Instead, the class should be used as
+     * standard programming. Instead, the class should be used as   不应该在标准编程中构造实例。相反，类应该使用StringUtils.trim
      * {@code StringUtils.trim(" foo ");}.</p>
      *
      * <p>This constructor is public to permit tools that require a JavaBean
@@ -188,10 +188,10 @@ public class StringUtils {
         super();
     }
 
-    // Empty checks
+    // Empty checks  空值检查
     //-----------------------------------------------------------------------
     /**
-     * <p>Checks if a CharSequence is empty ("") or null.</p>
+     * <p>Checks if a CharSequence is empty ("") or null.</p>       若为空或null   返回true
      *
      * <pre>
      * StringUtils.isEmpty(null)      = true
@@ -214,7 +214,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Checks if a CharSequence is not empty ("") and not null.</p>
+     * <p>Checks if a CharSequence is not empty ("") and not null.</p>      若不为空或null   返回true
      *
      * <pre>
      * StringUtils.isNotEmpty(null)      = false
@@ -233,7 +233,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Checks if any of the CharSequences are empty ("") or null.</p>
+     * <p>Checks if any of the CharSequences are empty ("") or null.</p>        若其中有一个为空或null   返回true
      *
      * <pre>
      * StringUtils.isAnyEmpty((String) null)    = true
@@ -265,7 +265,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Checks if none of the CharSequences are empty ("") or null.</p>
+     * <p>Checks if none of the CharSequences are empty ("") or null.</p>   若全部不为为空或null   返回true
      *
      * <pre>
      * StringUtils.isNoneEmpty((String) null)    = false
@@ -289,7 +289,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Checks if all of the CharSequences are empty ("") or null.</p>
+     * <p>Checks if all of the CharSequences are empty ("") or null.</p>    若全为空或null   返回true
      *
      * <pre>
      * StringUtils.isAllEmpty(null)             = true
@@ -320,7 +320,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Checks if a CharSequence is empty (""), null or whitespace only.</p>
+     * <p>Checks if a CharSequence is empty (""), null or whitespace only.</p>      若为空或null或空格whitespace   返回true
      *
      * <p>Whitespace is defined by {@link Character#isWhitespace(char)}.</p>
      *
@@ -351,7 +351,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Checks if a CharSequence is not empty (""), not null and not whitespace only.</p>
+     * <p>Checks if a CharSequence is not empty (""), not null and not whitespace only.</p>     若不为空或null或空格whitespace   返回true
      *
      * <p>Whitespace is defined by {@link Character#isWhitespace(char)}.</p>
      *
@@ -376,7 +376,7 @@ public class StringUtils {
     /**
      * <p>Checks if any of the CharSequences are empty ("") or null or whitespace only.</p>
      *
-     * <p>Whitespace is defined by {@link Character#isWhitespace(char)}.</p>
+     * <p>Whitespace is defined by {@link Character#isWhitespace(char)}.</p>        若其中一个为空或null或空格whitespace   返回true
      *
      * <pre>
      * StringUtils.isAnyBlank((String) null)    = true
@@ -411,7 +411,7 @@ public class StringUtils {
     /**
      * <p>Checks if none of the CharSequences are empty (""), null or whitespace only.</p>
      *
-     * <p>Whitespace is defined by {@link Character#isWhitespace(char)}.</p>
+     * <p>Whitespace is defined by {@link Character#isWhitespace(char)}.</p>        若全不为空或null或空格whitespace   返回true
      *
      * <pre>
      * StringUtils.isNoneBlank((String) null)    = false
@@ -438,7 +438,7 @@ public class StringUtils {
     /**
      * <p>Checks if all of the CharSequences are empty (""), null or whitespace only.</p>
      *
-     * <p>Whitespace is defined by {@link Character#isWhitespace(char)}.</p>
+     * <p>Whitespace is defined by {@link Character#isWhitespace(char)}.</p>    若全为空或null或空格whitespace   返回true
      *
      * <pre>
      * StringUtils.isAllBlank(null)             = true
@@ -468,10 +468,10 @@ public class StringUtils {
         return true;
     }
 
-    // Trim
+    // Trim     修剪
     //-----------------------------------------------------------------------
     /**
-     * <p>Removes control characters (char &lt;= 32) from both
+     * <p>Removes control characters (char &lt;= 32) from both      去除收尾空格
      * ends of this String, handling {@code null} by returning
      * {@code null}.</p>
      *
@@ -498,7 +498,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Removes control characters (char &lt;= 32) from both
+     * <p>Removes control characters (char &lt;= 32) from both      去除空格，为空返回null
      * ends of this String returning {@code null} if the String is
      * empty ("") after the trim or if it is {@code null}.
      *
@@ -525,7 +525,7 @@ public class StringUtils {
     }
 
     /**
-     * <p>Removes control characters (char &lt;= 32) from both
+     * <p>Removes control characters (char &lt;= 32) from both      去除空格，为空或null 返回空
      * ends of this String returning an empty String ("") if the String
      * is empty ("") after the trim or if it is {@code null}.
      *
@@ -549,9 +549,10 @@ public class StringUtils {
         return str == null ? EMPTY : str.trim();
     }
 
+    // 截断
     /**
      * <p>Truncates a String. This will turn
-     * "Now is the time for all good men" into "Now is the time for".</p>
+     * "Now is the time for all good men" into "Now is the time for".</p>       从头截断多少
      *
      * <p>Specifically:</p>
      * <ul>
@@ -586,7 +587,7 @@ public class StringUtils {
 
     /**
      * <p>Truncates a String. This will turn
-     * "Now is the time for all good men" into "is the time for all".</p>
+     * "Now is the time for all good men" into "is the time for all".</p>       从第几个截断多少
      *
      * <p>Works like {@code truncate(String, int)}, but allows you to specify
      * a "left edge" offset.
@@ -663,7 +664,7 @@ public class StringUtils {
         return str.substring(offset);
     }
 
-    // Stripping
+    // Stripping        剥离      去掉字符串中包含的其他字符串
     //-----------------------------------------------------------------------
     /**
      * <p>Strips whitespace from the start and end of a String.</p>
